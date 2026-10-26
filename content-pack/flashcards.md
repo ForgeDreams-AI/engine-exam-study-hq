@@ -217,3 +217,103 @@ Source documents: PUMPING_EXERCISE___PHASE_2.pdf, Engineer_pump_sequence.pdf, Pu
 
 **Q:** What are the critical verbalizations?
 **A:** "Wheel chocks will be set later." / Identify the crosslay being pumped. / "Opening the wrong discharge is an automatic FAIL." / "Do NOT kick the hose clamp open." / "Ladder drains are closed and the ladder is ready for water before opening the discharge." / "Maintain intake pressure above 20 PSI." / "Mark supply lines for safety." / "PAR complete and all crews out of the hot zone before shutdown." / "Tank Fill: fill the tank and cool the pump — feel the water."
+
+---
+
+## 5. 2025 Exam Packet (pp. 8, 15, 16, 24, 25)
+
+**Q:** Laying a supply line — what is the full sequence?
+**A:** Spot the tailboard at or past the hydrant (within 10'). Wait, watch and listen for the firefighter to say to go. Lay the line along the curb the hydrant is on. Crossover at the fire if necessary.
+
+**Q:** What speeds apply when laying a supply line?
+**A:** Maximum 15 mph; slow to 3–5 mph on the fireground.
+
+**Q:** Where do you place the deck gun when spotting the apparatus?
+**A:** In a position to protect exposures as needed.
+
+**Q:** How far from the structure do you spot the apparatus?
+**A:** At least 30' away, or the height of the structure, whichever is greater. Consider the effects of radiant heat on the apparatus as well.
+
+**Q:** If you are the ladder for the call, what kind of spot do you take?
+**A:** A good defensive spot as needed.
+
+**Q:** What view do you give the Captain when spotting, if there are no exposures?
+**A:** A view of three sides — if it does not hinder the ladder spot or the fire attack.
+
+**Q:** Spotting the apparatus — what surface do you aim for, and what do you never park under?
+**A:** Attempt to park on concrete or blacktop when possible. Do not park under power lines.
+
+**Q:** State the spacing rule.
+**A:** At least one (1) second of space for each ten feet of vehicle length at speeds below 40 mph. Add a second for greater speeds.
+
+**Q:** A 30 ft engine at 43 mph — how many seconds of space?
+**A:** 4 seconds (3 for the 30 ft of length, plus 1 for being over 40 mph).
+
+**Q:** Loss of supply line — what are the first four actions, in order, before notifying Command?
+**A:** 1. Close the intake valve to stop tank water from flowing backwards from the pump. 2. Open the "tank-to-pump" valve. 3. Shut down any exterior or exposure lines not being operated inside the structure. 4. The PCG increases the throttle to regain proper engine pressure for the lines still in operation.
+
+**Q:** Loss of supply line — after the first four, what comes next, in order?
+**A:** Notify Command via emergency traffic so the interior companies know to exit. Shut down the truck when all interior companies are out and have a PAR. Then replace the damaged section(s) of hose.
+
+**Q:** Replacing a damaged supply section — what are the steps?
+**A:** Shut down the hydrant, place a new piece of hose in line, restart the pumping sequence.
+
+**Q:** Pump loses prime on tank water — what do you check?
+**A:** Is the truck in pump gear? Is the "tank-to-pump" valve open? Is there water in the tank? After solving the problem, you may need to open a discharge to allow air to escape.
+
+**Q:** Pump loses prime on hydrant water — what do you check?
+**A:** Is the "intake" valve open? After solving the problem, you may need to open a discharge to allow air to escape.
+
+**Q:** How do you check a centrifugal pump for overheating?
+**A:** Place your hand onto the intake piping where it enters the pump panel. If the pipe feels warm, or hot, the pump is overheated.
+
+**Q:** Pump overheating — what are the three fixes?
+**A:** 1. Take the truck out of pump gear when not pumping water. 2. Open the "tank fill" valve to recirculate water. 3. Open any discharge and flow water from the pump.
+
+**Q:** Why is the tank fill valve dangerous to open fully during an operation?
+**A:** It is equivalent to having a 2 1/2" line flowing and will rob water from your operation. Opened fully, it may cause the pump to cavitate even with only one handline operating.
+
+**Q:** When is it correct to open the tank fill valve?
+**A:** To fill the tank; opened partially to refill the tank after the changeover from tank to hydrant water; or to cool the pump when you are not going to flow water for a long period of time.
+
+**Q:** Engine overheating — what are the steps?
+**A:** Open the indirect cooler(s). Open a small hand line and spray directly on the radiator. If the problem persists, SHUT DOWN the truck after all interior crews are out and accounted for.
+
+**Q:** What must you do immediately if any troubleshooting problem develops?
+**A:** NOTIFY COMMAND AND / OR YOUR COMPANY OFFICER IMMEDIATELY.
+
+**Q:** The PSG will not work — what do you check?
+**A:** The cab/body throttle switch for the correct position (body throttle).
+
+**Q:** Over the road — how many turns minimum, and what is the approach?
+**A:** Minimum 4 left and 4 rights. Approach: traffic check (LRL), signal, deceleration, proper lane.
+
+**Q:** Stopped for a turn — what is the wheel position?
+**A:** Proper gap spacing and a full stop. Left turn: keep wheels straight. Right turn: face wheels to the right.
+
+**Q:** Turning and completing a turn — what are the steps?
+**A:** Turning: traffic check (LRL), both hands on the steering wheel, hand over hand turning. Complete: traffic check (LRL), proper lane (left lane to left lane, right lane to right lane), cancel signals, moderate acceleration.
+
+**Q:** Lane changes — what happens before, during, and after?
+**A:** Before: traffic checks, signal early, enough spacing, check gaps. During: traffic check (LRL). After: traffic check, cancel signal, check spacing and speed. Plus: lane accountability Code 3.
+
+**Q:** Intersections — what is the stopping procedure?
+**A:** Traffic check, deceleration, proper use of the secondary retarder if available, gaps and spacing, use stop lines (crosswalks, RR crossings, etc.), come to a full stop.
+
+**Q:** Driving through an intersection Code 3 — what do you do?
+**A:** Traffic check, yield, lane, cover the brake pedal. Posted speed limit is the max when entering the intersection Code 3.
+
+**Q:** Freeway driving — what are the ramp, merge, and exit steps?
+**A:** Ramps: traffic check, speeds entering, check spacing, stay in lane, accelerate through curves. Merge: traffic check, speeds, spacing, signal, merge, cancel signal. Exit: traffic check, signal, smooth merge to exit, decelerate, be aware of ramp speed, spacing, cancel signal.
+
+**Q:** Bridges and underpasses — what do you check?
+**A:** Clearance / weight, and the height of the vehicle.
+
+**Q:** Railroad crossings — what is the rule?
+**A:** Traffic check (LRL). You must stop — the same rule that applies to buses and Hazmat.
+
+**Q:** Incidents — what is the approach and exit procedure?
+**A:** Have a plan: think ahead for positioning, where the incident is located (apartments = overhangs, parking lots = spacing hazards), use maps, have the Captain use the MCT for the most direct route. Approach: traffic check, signal, stay in the correct lane, safe parking off the road, always use warning lights, cones or flares. Exiting: warning lights, traffic checks, signal, spacing and smooth acceleration for crew members. Use engines or ladders as reference points on positioning, and as barriers when working in or around traffic.
+
+**Q:** Where is the Over the Road video, and what standard governs the Over the Road evaluation?
+**A:** Reference the Over the Road video on phoenixfireops.com. The evaluation is based on NFPA 1002, Standard on Fire Apparatus Driver/Operator Professional Qualifications — Phoenix Fire Department meets or exceeds this standard.

@@ -504,3 +504,287 @@ Four interactive decision-game scenarios. Read each step, pick a choice, then ch
 **If wrong:** ☠ FAIL — 10-over does NOT apply in an active school zone. Never exceed the posted limit; consider Code 2. Scenario over.
 
 **Scenario D complete.** The pattern: center/oncoming = stop at everything, max 20 after decelerating; with traffic = reds and stop signs; school zones = posted limit is absolute.
+
+---
+
+# Scenario E: Loss of Supply Line
+
+**Briefing:** You are pumping on a hydrant supply when the supply line fails. Interior crews are operating inside the structure on your water. The packet list is in a strict order — and the first four items come BEFORE you notify Command, because preserving water for the interior crews is the most urgent need. Get the order wrong and crews run dry.
+
+## Step E1 — First action
+**Situation:** The supply line just failed. Water to the interior crews is at risk. What is your FIRST action?
+- A) Notify Command via emergency traffic
+- B) Close the intake valve
+- C) Open the "tank-to-pump" valve
+- D) Increase the throttle
+**Correct: B**
+**If right:** Correct — close the intake first, so tank water can't flow backwards from the pump.
+**If wrong:** Wrong. The list is ordered and the first four come before notifying Command. First: close the intake valve.
+
+## Step E2 — Second action
+**Situation:** Intake is closed. Next?
+- A) Shut down the exterior lines
+- B) Open the "tank-to-pump" valve
+- C) Notify Command via emergency traffic
+- D) Replace the damaged hose section
+**Correct: B**
+**If right:** Correct — open "tank-to-pump" so tank water flows to the pump.
+**If wrong:** Wrong. Second: open the "tank-to-pump" valve to get tank water to the pump.
+
+## Step E3 — Third action
+**Situation:** Tank water is flowing to the pump. Next?
+- A) Increase the throttle to maximum
+- B) Notify Command via emergency traffic
+- C) Shut down any exterior or exposure lines not being operated inside the structure
+- D) Shut down the hydrant
+**Correct: C**
+**If right:** Correct — shut down exterior/exposure lines to preserve water for the interior crew(s).
+**If wrong:** Wrong. Third: shut down exterior and exposure lines not in use inside, preserving water for the interior crews.
+
+## Step E4 — Fourth action
+**Situation:** Exterior lines are shut down. Next?
+- A) The PCG increases the throttle to regain proper engine pressure for the lines still in operation
+- B) Notify Command via emergency traffic
+- C) Shut down the truck
+- D) Replace the damaged hose section
+**Correct: A**
+**If right:** Correct — fourth: the PCG increases the throttle to regain proper pressure for the lines still operating.
+**If wrong:** Wrong. Fourth: increase the throttle to the proper pressure for the lines still in operation.
+
+## Step E5 — Now notify (critical)
+**Situation:** The first four are done — water is preserved for the interior crews. Now what?
+- A) Shut down the truck
+- B) Replace the damaged hose section
+- C) Notify Command via emergency traffic so the interior companies know to exit the structure
+- D) Keep pumping and wait for Command to call you
+**Correct: C**
+**If right:** Correct — now, and only now, notify Command via emergency traffic so the interior companies exit.
+**If wrong:** ☠ FAIL — The first four preserve water; the fifth step is the emergency-traffic notification. Shutting down or replacing hose before the interior crews are told to exit leaves them inside on a failing supply. Scenario over.
+
+## Step E6 — Hold for PAR
+**Situation:** Command has been notified and the interior companies are exiting. The truck is pumping on tank water. You:
+- A) Shut down the truck now — the notification is done
+- B) Hold — do not shut down until all interior companies are out and you have a PAR
+- C) Replace the damaged hose section now
+- D) Reopen the exterior lines to help the exiting crews
+**Correct: B**
+**If right:** Correct — hold. Shutdown comes only when all interior companies are out and have a PAR.
+**If wrong:** Wrong. You do not shut down — or replace hose — until every interior company is out with a PAR.
+
+## Step E7 — Shutdown
+**Situation:** All interior companies are out and you have a PAR. Now?
+- A) Replace the damaged hose section first, then shut down
+- B) Shut down the truck
+- C) Reopen the intake valve
+- D) Keep pumping on tank water until the hydrant is fixed
+**Correct: B**
+**If right:** Correct — shut down the truck now that all interior companies are out with a PAR.
+**If wrong:** Wrong. The list order is shutdown first, then hose replacement.
+
+## Step E8 — Replace the hose
+**Situation:** Truck is shut down. Replace the damaged section(s) in order:
+- A) Place a new piece of hose in line, shut down the hydrant, restart the pumping sequence
+- B) Shut down the hydrant, place a new piece of hose in line, restart the pumping sequence
+- C) Restart the pumping sequence, then shut down the hydrant
+- D) Shut down the hydrant, restart the pumping sequence, then place the new hose
+**Correct: B**
+**If right:** Correct — shut the hydrant, new section in line, restart the pumping sequence.
+**If wrong:** Wrong. Hydrant down first, new section in line, then restart the pumping sequence.
+
+**Scenario E complete.** The pattern that saves crews: preserve water first (four steps), notify second, shut down on PAR, replace last.
+
+---
+
+# Scenario F: Pump Trouble on the Fireground
+
+**Briefing:** The pump is misbehaving mid-operation: a dead PSG, a lost prime, an overheating pump, then an overheating engine. Work the troubleshooting pages in order. One rule governs the engine step: the truck does not shut down while crews are still inside.
+
+## Step F1 — Dead PSG
+**Situation:** The PSG will not work. What do you check?
+- A) The tank-to-pump valve
+- B) The cab/body throttle switch for the correct position (body throttle)
+- C) The intake valve
+- D) The discharge gauges
+**Correct: B**
+**If right:** Correct — check the cab/body throttle switch for the correct position: body throttle.
+**If wrong:** Wrong. A dead PSG means checking the cab/body throttle switch first — it must be on body throttle.
+
+## Step F2 — Lost prime on tank water
+**Situation:** You're on tank water and the pump loses prime. What do you check?
+- A) Only whether there is water in the tank
+- B) Is the truck in pump gear, is "tank-to-pump" open, is there water in the tank
+- C) Only the intake valve
+- D) The PSG throttle switch
+**Correct: B**
+**If right:** Correct — all three: pump gear, "tank-to-pump" open, water in the tank.
+**If wrong:** Wrong. On tank water you check three things: pump gear, "tank-to-pump" valve, water in the tank.
+
+## Step F3 — Air in the pump
+**Situation:** You found it — "tank-to-pump" was closed. It's open now. What may you still need to do?
+- A) Open a discharge to allow air to escape
+- B) Shut down the truck
+- C) Open the tank fill fully
+- D) Increase the throttle to maximum
+**Correct: A**
+**If right:** Correct — after solving the problem, you may need to open a discharge to allow air to escape.
+**If wrong:** Wrong. Once the cause is fixed, open a discharge so trapped air can escape and prime can re-establish.
+
+## Step F4 — Lost prime on hydrant water
+**Situation:** Now you're on hydrant water and prime is lost. What do you check?
+- A) Is the "intake" valve open
+- B) Is there water in the tank
+- C) The cab/body throttle switch
+- D) The tank fill valve
+**Correct: A**
+**If right:** Correct — on hydrant water, check that the "intake" valve is open (then open a discharge for air if needed).
+**If wrong:** Wrong. Hydrant water prime means one check first: is the "intake" valve open?
+
+## Step F5 — Hot pipe
+**Situation:** You place your hand on the intake piping where it enters the pump panel. It feels hot. What does that tell you?
+- A) The pump is operating normally
+- B) The pump is overheated — a centrifugal pump overheats if run too long without moving water through it
+- C) The tank is empty
+- D) The PSG has failed
+**Correct: B**
+**If right:** Correct — warm or hot intake piping means the pump is overheated.
+**If wrong:** Wrong. The hand-on-the-intake-pipe check: warm or hot means the pump is overheated.
+
+## Step F6 — Cool the pump
+**Situation:** The pump is overheated. Which three actions fix or avoid it?
+- A) Take the truck out of pump gear when not pumping water, open the "tank fill" valve to recirculate water, open any discharge and flow water from the pump
+- B) Increase the throttle, close all discharges, shut down the truck
+- C) Open the tank fill fully and leave it open for the whole operation
+- D) Shut down the hydrant and switch to tank water
+**Correct: A**
+**If right:** Correct — all three: out of pump gear when idle, tank fill recirculation, or flow water from a discharge.
+**If wrong:** Wrong. The three fixes: out of pump gear when not pumping, tank fill to recirculate, or open a discharge and flow water.
+
+## Step F7 — Tank fill caution
+**Situation:** You're flowing one handline and want to cool the pump with the tank fill. What is the danger of opening it fully?
+- A) None — it only fills the tank
+- B) It is equivalent to a 2 1/2" line flowing, robs water from your operation, and may cause the pump to cavitate even with only one handline operating
+- C) It shuts down the pump automatically
+- D) It drains the tank in seconds
+**Correct: B**
+**If right:** Correct — tank fill fully open steals a 2 1/2" line worth of water and can cavitate the pump.
+**If wrong:** Wrong. Tank fill equals a 2 1/2" line flowing — fully open, it robs your operation and may cavitate the pump even with one handline.
+
+## Step F8 — Engine overheating (critical)
+**Situation:** Now the ENGINE is overheating. Indirect coolers are open, a small hand line is spraying the radiator, and it is still overheating — but interior crews are still inside the structure. You:
+- A) Shut down the truck immediately — the engine comes first
+- B) Keep cooling and hold — shut down only after all interior crews are out and accounted for
+- C) Open the tank fill fully to cool the engine
+- D) Increase the throttle to push more water
+**Correct: B**
+**If right:** Correct — hold. Shut down only after all interior crews are out and accounted for.
+**If wrong:** ☠ FAIL — Shutting down with crews inside kills their water and their way out. Cool it, hold, and shut down only once every interior crew is out and accounted for. Scenario over.
+
+**Scenario F complete.** Troubleshoot in order, respect the tank-fill caution, and never trade the engine for crews still inside.
+
+---
+
+# Scenario G: Spotting & Driving
+
+**Briefing:** You're driving and spotting the apparatus on a working fire: lay the line, spot the rig, hold your spacing, and drive the route by the book. Two calls end your day outright — parking under power lines and rolling a railroad crossing.
+
+## Step G1 — Spot the tailboard
+**Situation:** You're laying a supply line from the hydrant. Where do you spot the tailboard?
+- A) A full block past the hydrant
+- B) At or past the hydrant, within 10'
+- C) Right at the fire building
+- D) Anywhere on the hydrant's block
+**Correct: B**
+**If right:** Correct — tailboard at or past the hydrant, within 10'.
+**If wrong:** Wrong. Spot the tailboard at or past the hydrant, within 10 feet.
+
+## Step G2 — Laying speeds
+**Situation:** Line is going down. What speeds do you hold?
+- A) 25 mph max, 10 mph on the fireground
+- B) Maximum 15 mph, slowing to 3–5 mph on the fireground
+- C) Posted speed until the fireground, then 15 mph
+- D) 10 mph max the whole way
+**Correct: B**
+**If right:** Correct — 15 mph max laying, 3–5 mph once on the fireground.
+**If wrong:** Wrong. Max 15 mph laying the line; 3–5 mph on the fireground.
+
+## Step G3 — Spot distance
+**Situation:** The structure is 40 ft tall and there are no exposures to protect. How far away do you spot?
+- A) 30' — the standard distance
+- B) At least 40' — the height of the structure, since it is greater than 30'
+- C) 20' — closer is better for the attack
+- D) 50' — always add 10'
+**Correct: B**
+**If right:** Correct — 30' or the structure height, whichever is greater. Here, 40'.
+**If wrong:** Wrong. The rule is 30' OR structure height, whichever is greater — a 40 ft building means at least 40'.
+
+## Step G4 — Deck gun and exposures
+**Situation:** There are exposures on the B side. Where does the deck gun go?
+- A) Anywhere with a clear view of the fire
+- B) In a position to protect the exposures as needed
+- C) Pointed at the main fire body
+- D) It stays stowed unless the Captain orders it
+**Correct: B**
+**If right:** Correct — place the deck gun to protect exposures as needed.
+**If wrong:** Wrong. The deck gun's spot is driven by the exposures: place it to protect them.
+
+## Step G5 — Power lines (critical)
+**Situation:** The only flat, open spot near the fire is directly under power lines. You:
+- A) Take it — a good spot beats the rule
+- B) Refuse it and find another spot — you do not park under power lines
+- C) Take it but keep the aerial stowed
+- D) Take it if the Captain approves
+**Correct: B**
+**If right:** Correct — never park under power lines, whatever the spot offers.
+**If wrong:** ☠ FAIL — "Do not park under power lines" is absolute. No spot is worth it. Scenario over.
+
+## Step G6 — Spacing math
+**Situation:** You're following in a 30 ft engine at 43 mph. How many seconds of space do you hold?
+- A) 3 seconds
+- B) 4 seconds
+- C) 5 seconds
+- D) 2 seconds
+**Correct: B**
+**If right:** Correct — 1 second per 10 ft (3) plus 1 for being over 40 mph = 4 seconds.
+**If wrong:** Wrong. One second per 10 ft of length is 3, plus one more over 40 mph: 4 seconds.
+
+## Step G7 — Wheels in a turn
+**Situation:** You're stopped, waiting to make a left turn. Where are your wheels?
+- A) Turned left, ready to go
+- B) Straight — left turn keeps wheels straight until you move
+- C) Turned right to block the lane
+- D) It doesn't matter while stopped
+**Correct: B**
+**If right:** Correct — left turn: wheels straight while stopped. (Right turn: wheels face right.)
+**If wrong:** Wrong. Stopped for a left turn, wheels stay straight; a right turn faces wheels right.
+
+## Step G8 — Intersection, Code 3
+**Situation:** You're driving through an intersection Code 3. What do you do with the brake, and what is your max speed entering?
+- A) Cover the brake pedal; posted speed limit is the max
+- B) Brake hard before every intersection; 10 over posted
+- C) No brake needed if the light is green; 20 mph max
+- D) Accelerate through to clear it faster; no limit
+**Correct: A**
+**If right:** Correct — cover the brake pedal, and the posted limit is the max entering the intersection Code 3.
+**If wrong:** Wrong. Cover the brake pedal; posted speed is the max when entering an intersection Code 3.
+
+## Step G9 — Railroad crossing (critical)
+**Situation:** A railroad crossing is ahead on your route. What do you do?
+- A) Roll through if no train is visible
+- B) Stop — the same rule that applies to buses and Hazmat
+- C) Slow to 20 mph and check LRL
+- D) Stop only if the gates are down
+**Correct: B**
+**If right:** Correct — traffic check (LRL), and you must stop, as buses and Hazmat must.
+**If wrong:** ☠ FAIL — At a railroad crossing you stop. Rolling it in a fire apparatus is a critical error. Scenario over.
+
+## Step G10 — Bridge check
+**Situation:** Your route crosses an underpass. Before you commit, what do you check?
+- A) Nothing — apparatus always fit
+- B) Clearance / weight, and the height of your vehicle
+- C) Only the posted speed
+- D) Only whether traffic is clear
+**Correct: B**
+**If right:** Correct — clearance and weight limits against your vehicle's height before you go under.
+**If wrong:** Wrong. Bridges and underpasses: check clearance / weight and know your vehicle's height first.
+
+**Scenario G complete.** Spot for the exposures, hold your distance, hold your spacing, and never trade a rule for convenience.
