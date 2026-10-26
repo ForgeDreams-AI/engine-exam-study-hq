@@ -1,5 +1,5 @@
-const CACHE = 'engine-exam-study-hq-v2';
-const CORE = ['index.html', 'manifest.json', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'];
+const CACHE = 'engine-exam-study-hq-v3';
+const CORE = ['index.html', 'manifest.json', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png', 'assets/exam-packet/p08.jpg', 'assets/exam-packet/p15.jpg', 'assets/exam-packet/p16.jpg', 'assets/exam-packet/p24.jpg', 'assets/exam-packet/p25.jpg'];
 
 self.addEventListener('install', (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

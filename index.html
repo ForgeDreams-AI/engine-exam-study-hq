@@ -109,6 +109,14 @@
     @media(min-width:620px){.scen-grid{grid-template-columns:repeat(4,1fr)}}
     @media(max-width:380px){.scen-grid{grid-template-columns:1fr}}
     @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+      .packet-page{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;margin:0 0 22px}
+    .packet-page h3{margin:0 0 4px;font-size:1.15rem}
+    .packet-page .packet-sub{color:var(--muted);font-size:.85rem;margin:0 0 12px}
+    .packet-page ul,.packet-page ol{margin:8px 0 12px 20px}
+    .packet-page li{margin:4px 0}
+    .packet-page p{margin:8px 0}
+    .packet-photo{width:100%;height:auto;border-radius:10px;border:1px solid var(--line);display:block;margin-top:14px}
+    .packet-back{width:100%;min-height:54px;border:1px solid var(--line);border-radius:12px;background:var(--panel-2);color:var(--ink);font-weight:800;font-size:1rem;cursor:pointer;margin:0 0 22px}
   </style>
 </head>
 <body>
@@ -171,9 +179,168 @@
         </button>
       </div>
 
+      <div class="section-head"><h2>2025 Exam Packet</h2><span>Reference pages</span></div>
+      <button class="quick" id="packetOpen" type="button">
+        <span>2025 Exam Packet<small>5 packet pages, transcribed + photos</small></span><span class="arrow" aria-hidden="true">→</span>
+      </button>
+
       <div class="section-head"><h2>Question bank</h2><span>11 topics</span></div>
       <ul class="topic-list" id="topicList"></ul>
       <p class="source-note">Question bank compiled from the provided Phoenix FD practice tests and answer keys. Session progress stays in this open page and resets when it closes.</p>
+    </section>
+
+    <section id="packetView" class="view" aria-labelledby="packetTitle">
+      <button class="packet-back" id="packetBack" type="button">← Back to Home</button>
+      <div class="hero">
+        <p class="kicker">PHOENIX FD · 2025 ENGINEERS EXAM</p>
+        <h1 id="packetTitle">2025 Exam Packet</h1>
+        <p>Reference pages from the packet, transcribed with the original page photos. Pen-crossed-out material on p. 8 is left out.</p>
+      </div>
+
+      <article class="packet-page" id="packet-p08">
+        <h3>p. 8 — Pumping Sequence: Driving and Spotting</h3>
+        <p class="packet-sub">Lay supply line</p>
+        <ul>
+          <li>Spot the tailboard at or past the hydrant (within 10')</li>
+          <li>Wait, watch and listen for firefighter to say to go</li>
+          <li>Lay the line along the curb the hydrant is on</li>
+          <li>Crossover at the fire if necessary</li>
+          <li>Maximum speed 15 mph</li>
+          <li>Slow to 3 - 5 mph on the fireground</li>
+        </ul>
+        <p class="packet-sub">Spotting the apparatus</p>
+        <ul>
+          <li>Place deck gun in a position to protect exposures as needed</li>
+          <li>Spot at least 30' away from the structure or the height of the structure whichever is greater. Consider the effects of radiant heat on the apparatus as well.</li>
+          <li>If you are the ladder for the call get a good defensive spot as needed</li>
+          <li>Consider the fire attack location if no exposures</li>
+          <li>Provide the Captain a view of three sides if there are no exposures and if it does not hinder the ladder spot or the fire attack</li>
+          <li>Attempt to park on concrete or blacktop when possible</li>
+          <li>Do not park under power lines</li>
+        </ul>
+        <p><em>Note: the “PROCEDURES (ALF)” block and the paragraph about backing through the last gate are heavily crossed out in pen on the original page and are left out here.</em></p>
+        <img class="packet-photo" src="assets/exam-packet/p08.jpg" alt="Original photo of 2025 Engineers Exam packet page 8" loading="lazy">
+      </article>
+
+      <article class="packet-page" id="packet-p15">
+        <h3>p. 15 — Troubleshooting / Emergency Procedures</h3>
+        <p class="packet-sub">PSG will not work</p>
+        <p>Check cab/body throttle switch for correct position (body throttle)</p>
+        <p class="packet-sub">Pump over heating</p>
+        <ul>
+          <li>A centrifugal pump will overheat if allowed to operate for too long without moving water through the pump. Some trucks have pump overheat warning devices. Placing your hand onto the intake piping where it enters the pump panel can check for overheating. If the pipe feels warm, or hot, the pump is overheated. There are three things that can be done to avoid or solve pump overheating.
+            <ul>
+              <li>Take the truck out of pump gear when not pumping water</li>
+              <li>Open the “tank fill” valve to recirculate water</li>
+              <li>Open any discharge and flow water from the pump</li>
+            </ul>
+          </li>
+        </ul>
+        <p>Remember that the tank fill valve is equivalent to having a 2 1/2" line flowing and will rob water from your operation. The tank fill should only be opened to fill the tank, opened partially to refill your tank after the changeover from tank to hydrant water or to cool the pump when you are not going to flow water for a long period of time. Opening the tank fill valve fully may cause the pump to cavitate even with only one handline operating.</p>
+        <p><strong>NOTE: NOTIFY COMMAND AND / OR YOUR COMPANY OFFICER IMMEDIATELY SHOULD ANY OF THE FOLLOWING PROBLEMS DEVELOP</strong></p>
+        <p class="packet-sub">Engine “over heating”</p>
+        <ul>
+          <li>Open indirect cooler(s)</li>
+          <li>Open small hand line and spray directly on radiator</li>
+          <li>If overheating problem persists SHUT DOWN TRUCK after all interior crews are out and accounted for.</li>
+        </ul>
+        <img class="packet-photo" src="assets/exam-packet/p15.jpg" alt="Original photo of 2025 Engineers Exam packet page 15" loading="lazy">
+      </article>
+
+      <article class="packet-page" id="packet-p16">
+        <h3>p. 16 — Pump Loses / Does Not Have Prime; Loss of Supply Line</h3>
+        <p class="packet-sub">Pump loses / does not have prime — while operating on tank water</p>
+        <ul>
+          <li>Is truck in pump gear?</li>
+          <li>Is “tank-to-pump” valve open?</li>
+          <li>Is there water in the tank?</li>
+          <li>After solving the problem, you may need to open a discharge to allow air to escape.</li>
+        </ul>
+        <p class="packet-sub">While operating on hydrant water</p>
+        <ul>
+          <li>Is “intake” valve open?</li>
+          <li>After solving the problem, you may need to open a discharge to allow air to escape.</li>
+        </ul>
+        <p class="packet-sub">Loss of supply line</p>
+        <p>If supply line is lost due to failure of or damage to the hose, the following must be done immediately. The items on this list are to be done in the order listed. The first four items must be done prior to notifying Command as they revolve around the most urgent need at the time and that is getting and preserving water for the interior crews to operate with while they exit the structure.</p>
+        <ol>
+          <li>Close the intake valve to stop tank water from flowing backwards from the pump</li>
+          <li>Open the “tank-to-pump” valve to allow water from the tank to flow to the pump</li>
+          <li>Shut down any exterior or exposure lines that are not being operated inside the structure to preserve water for the interior crew(s)</li>
+          <li>The PCG should increase the throttle to regain the proper engine pressure for the lines still in operation. If not, increase the throttle to the proper pressure.</li>
+          <li>Notify command via emergency traffic to notify the company(ies) on the lines inside the structure of the situation and to exit the structure</li>
+          <li>Shut down truck when all of the interior companies are out and have a PAR</li>
+          <li>Replace the damaged section(s) of hose
+            <ul>
+              <li>Shut down the hydrant</li>
+              <li>Place a new piece of hose in line</li>
+              <li>Restart pumping sequence</li>
+            </ul>
+          </li>
+        </ol>
+        <img class="packet-photo" src="assets/exam-packet/p16.jpg" alt="Original photo of 2025 Engineers Exam packet page 16" loading="lazy">
+      </article>
+
+      <article class="packet-page" id="packet-p24">
+        <h3>p. 24 — Over the Road</h3>
+        <p>NFPA 1002: Standard on Fire Apparatus Driver/Operator Professional Qualifications requirements. Evaluation Form based on minimum requirements; Phoenix Fire Department meets or exceeds this standard.</p>
+        <p class="packet-sub">Turns: Minimum 4 left and 4 rights</p>
+        <ol>
+          <li>Approach: Traffic check (LRL), signal, deceleration, proper Lane</li>
+          <li>If stop necessary: proper gap spacing, full stop
+            <ul>
+              <li>Wheels: Left turn keep wheels straight, right turn face wheels to the right</li>
+            </ul>
+          </li>
+          <li>Turning: Traffic check (LRL) both hands on steering wheel, hand over hand turning</li>
+          <li>Complete turn: Traffic check (LRL) proper lane left lane to left lane, right lane to right lane, cancel signals, moderate acceleration</li>
+        </ol>
+        <p class="packet-sub">Lane Changes</p>
+        <ol>
+          <li>Before change: Traffic checks, signal early have enough spacing and check gaps</li>
+          <li>During change: Traffic check (LRL)</li>
+          <li>After change: Traffic check, cancel signal, check spacing and speed</li>
+          <li>Lane accountability Code 3</li>
+        </ol>
+        <p class="packet-sub">Intersections</p>
+        <ol>
+          <li>Stopping: Traffic check, deceleration, proper use of secondary retarder if available. Gaps and spacing. Use stop lines (crosswalks, RR crossings, etc.) come to full stop.</li>
+          <li>Driving Through: Traffic check, yield, lane, cover brake pedal (posted speed limit Max when entering intersection Code 3).</li>
+        </ol>
+        <img class="packet-photo" src="assets/exam-packet/p24.jpg" alt="Original photo of 2025 Engineers Exam packet page 24" loading="lazy">
+      </article>
+
+      <article class="packet-page" id="packet-p25">
+        <h3>p. 25 — Freeway Driving / Bridges / Railroad / Incidents / Spacing Rule</h3>
+        <p class="packet-sub">Freeway Driving (Code 3 response, warning lights when working on freeway)</p>
+        <ol>
+          <li>On/off ramps: Traffic check, speeds entering, check spacing, stay in lane, accelerate through curves</li>
+          <li>Merge: Traffic check, speeds, spacing, signal, and merge, cancel signal</li>
+          <li>Lane Change: Traffic check, signal spacing, decelerate, be aware of ramp</li>
+          <li>Exit: Traffic check, signal, smooth merge to exit, decelerate, be aware of ramp speed, spacing, cancel signal</li>
+        </ol>
+        <p class="packet-sub">Bridges/Underpasses</p>
+        <ol>
+          <li>Clearance / weight</li>
+          <li>Height of vehicle</li>
+        </ol>
+        <p class="packet-sub">Railroad Crossing</p>
+        <ol>
+          <li>Traffic check (LRL)</li>
+          <li>A must stop for busses and Hazmat</li>
+        </ol>
+        <p class="packet-sub">Incidents (approach and exits)</p>
+        <ol>
+          <li>Have a plan: think ahead for positioning, where incident is located, i.e. apartments (overhangs), parking lots (spacing hazards), use maps, have Captain to use MCT for most direct route.</li>
+          <li>Approach: Traffic check, signal, stay in correct lane. Safe parking off road, always use warning lights, cones or flares</li>
+          <li>Exiting: Warning lights, traffic checks, signal, spacing and smooth acceleration for crew members</li>
+          <li>Use engines or ladders as reference points on positioning. Use as barriers when working in or around traffic</li>
+        </ol>
+        <p class="packet-sub">Spacing Rule</p>
+        <p>You need at least one (1) second of space for each ten foot of vehicle length at speeds below 40 mph. Add a second for greater speeds. (i.e. 30 ft. engine @ 43 mph = 4 sec.)</p>
+        <p>REFERENCE THE OVER THE ROAD VIDEO ON phoenixfireops.com</p>
+        <img class="packet-photo" src="assets/exam-packet/p25.jpg" alt="Original photo of 2025 Engineers Exam packet page 25" loading="lazy">
+      </article>
     </section>
 
     <section id="studyView" class="view" aria-labelledby="studyHeading">
@@ -238,7 +405,7 @@
     var state={topic:'All topics',length:20,mode:null,deck:[],cursor:0,weak:new Set(),answered:0,correct:0,streak:0,best:0,topicStats:{},roundAnswered:0,roundCorrect:0};
     TOPICS.forEach(function(t){state.topicStats[t]={answered:0,correct:0};});
     var $=function(id){return document.getElementById(id);};
-    var els={home:$('homeView'),study:$('studyView'),weak:$('weakView'),stats:$('statsView'),scenario:$('scenarioView'),stage:$('studyStage'),toast:$('toast')};
+    var els={home:$('homeView'),study:$('studyView'),weak:$('weakView'),stats:$('statsView'),scenario:$('scenarioView'),packet:$('packetView'),stage:$('studyStage'),toast:$('toast')};
 
     function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
     function usable(q,mode){
@@ -251,7 +418,7 @@
     }
     function shuffle(items){var a=items.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),v=a[i];a[i]=a[j];a[j]=v;}return a;}
     function setView(name){
-      ['home','study','weak','stats','scenario'].forEach(function(v){els[v].classList.toggle('active',v===name);});
+      ['home','study','weak','stats','scenario','packet'].forEach(function(v){els[v].classList.toggle('active',v===name);});
       document.querySelectorAll('.nav-btn').forEach(function(b){b.classList.toggle('active',b.dataset.view===name||(name==='study'&&false));});
       if(name==='home')renderHome();if(name==='weak')renderWeakView();if(name==='stats')renderStats();
       window.scrollTo({top:0,behavior:'smooth'});
@@ -354,6 +521,8 @@
     document.querySelectorAll('.mode-card').forEach(function(b){b.onclick=function(){start(this.dataset.mode);};});
     $('quickStart').onclick=function(){state.topic='All topics';$('topicSelect').value=state.topic;start('mc',10);};
     $('backBtn').onclick=function(){setView('home');};
+    $('packetOpen').onclick=function(){setView('packet');};
+    $('packetBack').onclick=function(){setView('home');};
     document.querySelectorAll('.nav-btn').forEach(function(b){b.onclick=function(){setView(this.dataset.view);};});
     $('resetOpen').onclick=function(){$('resetConfirm').classList.add('open');};$('resetCancel').onclick=function(){$('resetConfirm').classList.remove('open');};$('resetDo').onclick=resetSession;
     var SCENARIOS=[
