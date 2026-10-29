@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#0b0e11">
-  <meta name="description" content="Phoenix FD engineer exam drills — 803 questions across 12 topics, plus 7 scenario runs. Flashcards, multiple choice, fill-the-blank, and weak-spot review.">
+  <meta name="description" content="Phoenix FD engineer exam drills — 1,356 questions across 12 topics, plus 7 scenario runs. Flashcards, multiple choice, fill-the-blank, and weak-spot review.">
   <link rel="manifest" href="manifest.json">>
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -69,6 +69,13 @@
     .mode-card:disabled{opacity:.5;cursor:not-allowed}.mode-mark{display:inline-grid;place-items:center;width:38px;height:32px;border-radius:7px;background:var(--panel-2);color:var(--red);font-family:ui-monospace,monospace;font-weight:900;font-size:.83rem}
     .mode-card strong{display:block;font-size:1rem}.mode-card span{display:block;color:var(--muted);font-size:.78rem;margin-top:3px}
     .topic-list{display:grid;gap:7px;margin:0;padding:0;list-style:none}
+    .topic-picker{display:grid;gap:7px;margin-bottom:12px}
+    .topic-picker-actions{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+    .topic-picker-actions button{min-height:40px;padding:0 14px;border:1px solid var(--line);background:var(--panel);border-radius:10px;font-weight:800;cursor:pointer}
+    #topicSummary{margin-left:auto;color:var(--muted);font-size:.82rem;text-align:right}
+    .topic-check{display:grid;grid-template-columns:22px 46px 1fr auto;align-items:center;gap:12px;padding:12px 13px;background:var(--panel);border:1px solid var(--line);border-radius:11px;cursor:pointer}
+    .topic-check input{width:20px;height:20px;accent-color:var(--red)}
+    .topic-check.checked{border-color:var(--red);background:color-mix(in srgb,var(--red) 12%,var(--panel))}
     .topic-row{display:grid;grid-template-columns:46px 1fr auto;align-items:center;gap:12px;padding:12px 13px;background:var(--panel);border:1px solid var(--line);border-radius:11px}
     .topic-code{font-family:ui-monospace,monospace;font-weight:900;color:var(--red);font-size:.78rem}.topic-name{font-weight:750}.topic-count{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.82rem}
     .source-note{margin-top:18px;padding:14px 15px;border-top:1px solid var(--line);color:var(--muted);font-size:.8rem}
@@ -124,7 +131,7 @@
       <div class="hero">
         <p class="kicker">PHOENIX FD · ENGINEER EXAM</p>
         <h1 id="homeTitle">Train the answer before the test asks.</h1>
-        <p><strong><span id="bankCount">803</span> questions across 12 topics.</strong> Run a focused set, review misses, and keep moving.</p>
+        <p><strong><span id="bankCount">1356</span> questions across 12 topics.</strong> Run a focused set, review misses, and keep moving.</p>
       </div>
 
       <div class="session-strip" aria-label="Current session summary">
@@ -138,8 +145,9 @@
       </button>
 
       <div class="section-head"><h2>Build a drill</h2><span>Choose your focus</span></div>
-      <label class="field-label" for="topicSelect">Topic</label>
-      <div class="select-wrap"><select id="topicSelect"></select></div>
+      <span class="field-label">Topics — pick one or more</span>
+      <div class="topic-picker-actions"><button type="button" id="topicsAll">All</button><button type="button" id="topicsNone">None</button><span id="topicSummary"></span></div>
+      <div id="topicPicker" class="topic-picker"></div>
       <span class="field-label">Questions per round</span>
       <div class="length-row" id="lengthRow" aria-label="Questions per round">
         <button type="button" data-length="10">10</button>
@@ -408,7 +416,7 @@
     var TOPICS=['Volume I','Volume II','Pumping & Hydraulics','Aerial & Ladder','Engine Company Ops','Mixed Review','Customer Service & Admin','Air Brake Test','Code 3 Response','Phase 2 Pumping','Practical Test Checklist','2025 Exam Packet'];
     var CODES={'Volume I':'V1','Volume II':'V2','Pumping & Hydraulics':'PUMP','Aerial & Ladder':'A&L','Engine Company Ops':'ENG','Mixed Review':'MIX','Customer Service & Admin':'ADMIN','Air Brake Test':'AIR','Code 3 Response':'C3','Phase 2 Pumping':'PH2','Practical Test Checklist':'PRAC','2025 Exam Packet':'PKT'};
     var MODE_NAMES={flash:'Flashcards',mc:'Multiple choice',fill:'Fill the blank',weak:'Weak spots'};
-    var state={topic:'All topics',length:20,mode:null,deck:[],cursor:0,weak:new Set(),answered:0,correct:0,streak:0,best:0,topicStats:{},roundAnswered:0,roundCorrect:0};
+    var state={topics:TOPICS.slice(),length:20,mode:null,deck:[],cursor:0,weak:new Set(),answered:0,correct:0,streak:0,best:0,topicStats:{},roundAnswered:0,roundCorrect:0};
     TOPICS.forEach(function(t){state.topicStats[t]={answered:0,correct:0};});
     var $=function(id){return document.getElementById(id);};
     var els={home:$('homeView'),study:$('studyView'),weak:$('weakView'),stats:$('statsView'),scenario:$('scenarioView'),packet:$('packetView'),stage:$('studyStage'),toast:$('toast')};
@@ -435,17 +443,20 @@
       $('homeAnswered').textContent=state.answered;$('homeAccuracy').textContent=accuracy;$('homeWeak').textContent=state.weak.size;
       $('navWeak').textContent=state.weak.size;$('weakCardCount').textContent=state.weak.size;$('weakModeCard').disabled=state.weak.size===0;
     }
+    function topicLabel(){if(state.topics.length===TOPICS.length)return 'All topics';if(state.topics.length===1)return state.topics[0];if(!state.topics.length)return 'No topics selected';return state.topics.length+' topics';}
+    function updateTopicSummary(){var total=0;state.topics.forEach(function(t){total+=BANK.filter(function(q){return q.topic===t;}).length;});$('topicSummary').textContent=state.topics.length+' of '+TOPICS.length+' topics · '+total+' Qs';}
+    function renderTopicPicker(){var counts2={};TOPICS.forEach(function(t){counts2[t]=BANK.filter(function(q){return q.topic===t;}).length;});$('topicPicker').innerHTML=TOPICS.map(function(t){var on=state.topics.indexOf(t)>=0;return '<label class="topic-check'+(on?' checked':'')+'"><input type="checkbox" data-topic="'+esc(t)+'"'+(on?' checked':'')+'><span class="topic-code">'+esc(CODES[t])+'</span><span class="topic-name">'+esc(t)+'</span><span class="topic-count">'+counts2[t]+' Qs</span></label>';}).join('');document.querySelectorAll('#topicPicker input').forEach(function(box){box.onchange=function(){state.topics=[];document.querySelectorAll('#topicPicker input:checked').forEach(function(b){state.topics.push(b.dataset.topic);});document.querySelectorAll('#topicPicker .topic-check').forEach(function(row){row.classList.toggle('checked',row.querySelector('input').checked);});updateTopicSummary();};});updateTopicSummary();}
     function renderHome(){updateCounts();}
     function start(mode,overrideLength){
       state.mode=mode;state.cursor=0;state.roundAnswered=0;state.roundCorrect=0;
       var pool;
       if(mode==='weak') pool=BANK.filter(function(q){return state.weak.has(q.id)&&usable(q,'flash');});
-      else pool=BANK.filter(function(q){return (state.topic==='All topics'||q.topic===state.topic)&&usable(q,mode);});
+      else{if(!state.topics.length){toast('Pick at least one topic first.');return;}pool=BANK.filter(function(q){return state.topics.indexOf(q.topic)>=0&&usable(q,mode);});}
       pool=shuffle(pool);
       var n=overrideLength||state.length;
       state.deck=mode==='weak'?pool:pool.slice(0,Math.min(n,pool.length));
       if(!state.deck.length){toast(mode==='weak'?'No weak spots yet. Misses will appear here.':'No usable questions in this selection.');return;}
-      $('studyHeading').textContent=MODE_NAMES[mode];$('studyTopic').textContent=mode==='weak'?'Current session':state.topic;
+      $('studyHeading').textContent=MODE_NAMES[mode];$('studyTopic').textContent=mode==='weak'?'Current session':topicLabel();
       setView('study');renderQuestion();
     }
     function current(){return state.deck[state.cursor];}
@@ -504,7 +515,7 @@
     }
     function renderWeakView(){
       updateCounts();
-      if(!state.weak.size){$('weakList').innerHTML='<div class="empty"><div class="empty-mark">0</div><h2>Nothing here yet</h2><p>Questions you miss in any drill will collect here for another pass.</p><button class="btn primary" id="emptyStart" type="button">Start a Quick 10</button></div>';$('emptyStart').onclick=function(){state.topic='All topics';$('topicSelect').value=state.topic;start('mc',10);};return;}
+      if(!state.weak.size){$('weakList').innerHTML='<div class="empty"><div class="empty-mark">0</div><h2>Nothing here yet</h2><p>Questions you miss in any drill will collect here for another pass.</p><button class="btn primary" id="emptyStart" type="button">Start a Quick 10</button></div>';$('emptyStart').onclick=function(){state.topics=TOPICS.slice();renderTopicPicker();start('mc',10);};return;}
       var grouped={};TOPICS.forEach(function(t){grouped[t]=0;});state.weak.forEach(function(id){var q=BANK.find(function(x){return x.id===id;});if(q)grouped[q.topic]++;});
       var rows=TOPICS.filter(function(t){return grouped[t];}).map(function(t){return '<li class="topic-row"><span class="topic-code">'+esc(CODES[t])+'</span><span class="topic-name">'+esc(t)+'</span><span class="topic-count">'+grouped[t]+'</span></li>';}).join('');
       $('weakList').innerHTML='<div class="session-strip"><div class="metric"><b>'+state.weak.size+'</b><span>to review</span></div><div class="metric"><b>'+state.best+'</b><span>best streak</span></div><div class="metric"><b>'+state.answered+'</b><span>attempted</span></div></div><button class="quick" id="studyWeakNow" type="button"><span>Work the weak deck<small>Master cards to clear them</small></span><span class="arrow">→</span></button><ul class="topic-list">'+rows+'</ul>';
@@ -520,12 +531,13 @@
 
     var counts={};TOPICS.forEach(function(t){counts[t]=BANK.filter(function(q){return q.topic===t;}).length;});
     $('bankCount').textContent=BANK.length;
-    $('topicSelect').innerHTML='<option>All topics</option>'+TOPICS.map(function(t){return '<option value="'+esc(t)+'">'+esc(t)+' · '+counts[t]+'</option>';}).join('');
+    renderTopicPicker();
     $('topicList').innerHTML=TOPICS.map(function(t){return '<li class="topic-row"><span class="topic-code">'+esc(CODES[t])+'</span><span class="topic-name">'+esc(t)+'</span><span class="topic-count">'+counts[t]+' Qs</span></li>';}).join('');
-    $('topicSelect').onchange=function(){state.topic=this.value;};
+    $('topicsAll').onclick=function(){state.topics=TOPICS.slice();renderTopicPicker();};
+    $('topicsNone').onclick=function(){state.topics=[];renderTopicPicker();};
     document.querySelectorAll('#lengthRow button').forEach(function(b){b.onclick=function(){state.length=Number(this.dataset.length);document.querySelectorAll('#lengthRow button').forEach(function(x){x.classList.toggle('active',x===b);});};});
     document.querySelectorAll('.mode-card').forEach(function(b){b.onclick=function(){start(this.dataset.mode);};});
-    $('quickStart').onclick=function(){state.topic='All topics';$('topicSelect').value=state.topic;start('mc',10);};
+    $('quickStart').onclick=function(){state.topics=TOPICS.slice();renderTopicPicker();start('mc',10);};
     $('backBtn').onclick=function(){setView('home');};
     $('packetOpen').onclick=function(){setView('packet');};
     $('packetBack').onclick=function(){setView('home');};
