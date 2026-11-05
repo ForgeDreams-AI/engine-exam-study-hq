@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IFSTA Engineer — Chapter Questions</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #f4f4f2; color: #1a1a1a; line-height: 1.5; }
+  header { background: #b3202c; color: #fff; padding: 20px 16px; }
+  header h1 { margin: 0; font-size: 24px; line-height: 1.2; }
+  header p { margin: 6px 0 0; font-size: 15px; opacity: .92; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px; }
+  .hidden { display: none !important; }
+  h2 { font-size: 20px; margin: 8px 0 12px; }
+  .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+  @media (min-width: 560px) { .grid { grid-template-columns: 1fr 1fr; } }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 12px; padding: 16px; text-align: left; cursor: pointer; font: inherit; width: 100%; }
+  .card:hover, .card:focus { border-color: #b3202c; outline: none; }
+  .card .num { font-size: 13px; font-weight: 700; color: #b3202c; text-transform: uppercase; letter-spacing: .04em; }
+  .card .title { font-size: 18px; font-weight: 700; margin: 2px 0; }
+  .card .count { font-size: 14px; color: #555; }
+  .mix { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+  .mix .num { color: #ffb3b8; }
+  .mix .count { color: #ddd; }
+  .btn { display: block; width: 100%; padding: 16px; font-size: 18px; font-weight: 700; border: none; border-radius: 12px; cursor: pointer; margin: 10px 0; min-height: 52px; }
+  .btn-red { background: #b3202c; color: #fff; }
+  .btn-dark { background: #1a1a1a; color: #fff; }
+  .btn-light { background: #fff; color: #1a1a1a; border: 1px solid #ccc; }
+  .btn-green { background: #1e7d32; color: #fff; }
+  .btn-amber { background: #b45309; color: #fff; }
+  .limrow { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .lim { padding: 16px; font-size: 20px; font-weight: 700; border-radius: 12px; border: 2px solid #ccc; background: #fff; cursor: pointer; min-height: 56px; }
+  .lim.sel { border-color: #b3202c; background: #fdecea; }
+  .note { font-size: 15px; color: #555; margin: 8px 0; }
+  .scope { font-size: 15px; color: #555; margin: 0 0 4px; }
+  .qmeta { font-size: 14px; font-weight: 700; color: #b3202c; text-transform: uppercase; letter-spacing: .04em; }
+  .qtext { font-size: 22px; font-weight: 600; line-height: 1.35; margin: 12px 0 20px; }
+  .answer { background: #fff; border: 1px solid #ddd; border-left: 6px solid #1e7d32; border-radius: 8px; padding: 16px; font-size: 18px; margin: 0 0 16px; }
+  .bar { height: 10px; background: #ddd; border-radius: 6px; overflow: hidden; margin: 8px 0; }
+  .bar > div { height: 100%; background: #b3202c; width: 0%; }
+  .progress { font-size: 15px; color: #555; }
+  .score { font-size: 40px; font-weight: 800; margin: 8px 0; }
+  .miss { background: #fff; border: 1px solid #ddd; border-radius: 10px; padding: 14px; margin: 12px 0; }
+  .miss .mq { font-weight: 700; font-size: 17px; }
+  .miss .ma { font-size: 16px; color: #333; margin-top: 6px; }
+  .miss .mc { font-size: 13px; color: #b3202c; font-weight: 700; text-transform: uppercase; }
+  footer { text-align: center; font-size: 13px; color: #777; padding: 24px 16px; }
+</style>
+</head>
+<body>
+<a href="../" style="display:block;background:#1a1a1a;color:#fff;font-weight:700;font-size:15px;text-decoration:none;padding:12px 16px;">← Engineer Exam Study HQ</a>
+<header>
+  <h1>IFSTA Engineer — Chapter Questions</h1>
+  <p>Driver/Operator study questions. Pick a chapter or mix them all, then test yourself.</p>
+</header>
+<main>
+  <!-- HOME -->
+  <section id="view-home">
+    <h2>Pick a chapter</h2>
+    <div class="grid" id="chapter-grid"></div>
+  </section>
+
+  <!-- SETUP -->
+  <section id="view-setup" class="hidden">
+    <p class="scope" id="setup-scope"></p>
+    <h2 id="setup-title"></h2>
+    <p class="note" id="setup-pool"></p>
+    <p style="font-weight:700; margin:16px 0 0;">How many questions?</p>
+    <div class="limrow">
+      <button class="lim sel" id="lim25" type="button">25</button>
+      <button class="lim" id="lim50" type="button">50</button>
+    </div>
+    <p class="note" id="setup-cap"></p>
+    <button class="btn btn-red" id="start-btn" type="button">Start quiz</button>
+    <button class="btn btn-light" id="setup-back" type="button">Back to chapters</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="hidden">
+    <p class="progress" id="quiz-progress"></p>
+    <div class="bar"><div id="quiz-bar"></div></div>
+    <p class="qmeta" id="quiz-meta"></p>
+    <p class="qtext" id="quiz-q"></p>
+    <div id="quiz-answer-wrap" class="hidden">
+      <div class="answer" id="quiz-a"></div>
+      <button class="btn btn-green" id="btn-got" type="button">Got it ✓</button>
+      <button class="btn btn-amber" id="btn-missed" type="button">Missed it ✗</button>
+    </div>
+    <button class="btn btn-dark" id="btn-show" type="button">Show answer</button>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="view-results" class="hidden">
+    <h2>Done!</h2>
+    <p class="score" id="res-score"></p>
+    <p class="note" id="res-sub"></p>
+    <div id="res-missed"></div>
+    <button class="btn btn-red" id="btn-restart" type="button">Restart (same quiz, reshuffled)</button>
+    <button class="btn btn-light" id="btn-home" type="button">Back to chapters</button>
+  </section>
+</main>
+<footer>Study questions from the IFSTA Driver/Operator chapter sheets. Answers are study summaries, not an official IFSTA answer key — verify against the textbook and department policy.</footer>
+
+<script src="questions.js"></script>
+<script>
+  var chapters = IFSTA_DATA.chapters;
+  var totalQ = chapters.reduce(function (s, c) { return s + c.questions.length; }, 0);
+
+  var home = document.getElementById('view-home');
+  var setup = document.getElementById('view-setup');
+  var quiz = document.getElementById('view-quiz');
+  var results = document.getElementById('view-results');
+
+  function show(el) {
+    [home, setup, quiz, results].forEach(function (v) { v.classList.add('hidden'); });
+    el.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+
+  // Build home grid: Mix card + 21 chapter cards.
+  var grid = document.getElementById('chapter-grid');
+  var mix = document.createElement('button');
+  mix.className = 'card mix'; mix.type = 'button';
+  mix.innerHTML = '<div class="num">Mix</div><div class="title">All chapters mixed</div>' +
+    '<div class="count">' + totalQ + ' questions across ' + chapters.length + ' chapters</div>';
+  mix.onclick = function () { openSetup(null); };
+  grid.appendChild(mix);
+
+  chapters.forEach(function (ch) {
+    var b = document.createElement('button');
+    b.className = 'card'; b.type = 'button';
+    b.innerHTML = '<div class="num">Chapter ' + ch.n + '</div><div class="title">' + esc(ch.title) + '</div>' +
+      '<div class="count">' + ch.questions.length + ' questions</div>';
+    b.onclick = function () { openSetup(ch); };
+    grid.appendChild(b);
+  });
+
+  function esc(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // Setup state
+  var scopeCh = null, limit = 25, pool = [];
+  var lim25 = document.getElementById('lim25'), lim50 = document.getElementById('lim50');
+
+  function openSetup(ch) {
+    scopeCh = ch;
+    pool = ch ? ch.questions.map(function (q) { return { q: q.q, a: q.a, ch: ch }; })
+              : chapters.reduce(function (arr, c) {
+                  return arr.concat(c.questions.map(function (q) { return { q: q.q, a: q.a, ch: c }; }));
+                }, []);
+    document.getElementById('setup-scope').textContent = ch ? ('Chapter ' + ch.n) : 'Mix';
+    document.getElementById('setup-title').textContent = ch ? ch.title : 'All chapters mixed';
+    document.getElementById('setup-pool').textContent = pool.length + ' questions in this pool.';
+    setLimit(25);
+    show(setup);
+  }
+
+  function setLimit(n) {
+    limit = n;
+    lim25.classList.toggle('sel', n === 25);
+    lim50.classList.toggle('sel', n === 50);
+    var eff = Math.min(n, pool.length);
+    document.getElementById('setup-cap').textContent =
+      pool.length < n ? (pool.length + ' questions available — you\u2019ll get all ' + pool.length + '.')
+                      : ('You\u2019ll get ' + eff + ' questions, shuffled.');
+  }
+  lim25.onclick = function () { setLimit(25); };
+  lim50.onclick = function () { setLimit(50); };
+  document.getElementById('setup-back').onclick = function () { show(home); };
+
+  // Quiz state
+  var order = [], idx = 0, correct = 0, missed = [];
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+
+  document.getElementById('start-btn').onclick = function () {
+    order = shuffle(pool.slice()).slice(0, Math.min(limit, pool.length));
+    idx = 0; correct = 0; missed = [];
+    renderQ();
+    show(quiz);
+  };
+
+  function renderQ() {
+    var item = order[idx];
+    document.getElementById('quiz-progress').textContent = 'Question ' + (idx + 1) + ' of ' + order.length;
+    document.getElementById('quiz-bar').style.width = (idx / order.length * 100) + '%';
+    document.getElementById('quiz-meta').textContent = 'Chapter ' + item.ch.n + ' · ' + item.ch.title;
+    document.getElementById('quiz-q').textContent = item.q;
+    document.getElementById('quiz-a').textContent = item.a;
+    document.getElementById('quiz-answer-wrap').classList.add('hidden');
+    document.getElementById('btn-show').classList.remove('hidden');
+  }
+
+  document.getElementById('btn-show').onclick = function () {
+    document.getElementById('quiz-answer-wrap').classList.remove('hidden');
+    document.getElementById('btn-show').classList.add('hidden');
+  };
+
+  function mark(got) {
+    if (got) { correct++; } else { missed.push(order[idx]); }
+    idx++;
+    if (idx >= order.length) { showResults(); } else { renderQ(); }
+  }
+  document.getElementById('btn-got').onclick = function () { mark(true); };
+  document.getElementById('btn-missed').onclick = function () { mark(false); };
+
+  function showResults() {
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('res-score').textContent = correct + ' of ' + order.length + ' correct';
+    document.getElementById('res-sub').textContent = missed.length === 0
+      ? 'Clean run — nice work.'
+      : 'Review the ones you missed below.';
+    var wrap = document.getElementById('res-missed');
+    wrap.innerHTML = '';
+    missed.forEach(function (m) {
+      var d = document.createElement('div');
+      d.className = 'miss';
+      d.innerHTML = '<div class="mc">Chapter ' + m.ch.n + ' · ' + esc(m.ch.title) + '</div>' +
+        '<div class="mq">' + esc(m.q) + '</div><div class="ma">' + esc(m.a) + '</div>';
+      wrap.appendChild(d);
+    });
+    show(results);
+  }
+
+  document.getElementById('btn-restart').onclick = function () {
+    order = shuffle(pool.slice()).slice(0, Math.min(limit, pool.length));
+    idx = 0; correct = 0; missed = [];
+    renderQ();
+    show(quiz);
+  };
+  document.getElementById('btn-home').onclick = function () { show(home); };
+</script>
+</body>
+</html>

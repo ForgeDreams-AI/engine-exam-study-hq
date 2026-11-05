@@ -20,7 +20,10 @@ self.addEventListener('fetch', (e) => {
         const copy = res.clone();
         caches.open(CACHE).then((c) => c.put(e.request, copy)).catch(() => {});
         return res;
-      }).catch(() => caches.match('index.html'));
+      }).catch((err) => {
+        if (new URL(e.request.url).pathname.indexOf('/ifsta/') !== -1) throw err;
+        return caches.match('index.html');
+      });
     })
   );
 });

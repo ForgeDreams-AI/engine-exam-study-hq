@@ -101,7 +101,7 @@
     .topic-stat{padding:14px 2px;border-bottom:1px solid var(--line)}.topic-stat-head{display:flex;justify-content:space-between;gap:10px;font-weight:750;font-size:.9rem}.topic-stat-head span:last-child{font-variant-numeric:tabular-nums;color:var(--muted)}.mini-track{height:5px;background:var(--panel-2);border-radius:999px;margin-top:8px;overflow:hidden}.mini-track i{display:block;height:100%;background:var(--red)}
     .danger-zone{margin-top:24px}.danger-zone .btn{width:100%}
     .confirm-box{display:none;margin-top:10px;padding:15px;border:1px solid var(--bad);border-radius:11px;background:var(--bad-bg)}.confirm-box.open{display:block}.confirm-box p{margin:0 0 10px;font-size:.88rem}.confirm-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-    .bottom-nav{position:relative;z-index:20;width:min(calc(100% - 28px),732px);margin:0 auto;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--nav);border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+    .bottom-nav{position:relative;z-index:20;width:min(calc(100% - 28px),732px);margin:0 auto;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:var(--nav);border:1px solid var(--line);border-bottom:0;border-radius:14px 14px 0 0;display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
     .nav-btn{min-height:54px;border:0;border-radius:10px;background:transparent;color:var(--muted);font-size:.72rem;font-weight:800;cursor:pointer;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}.nav-btn .nav-mark{font-family:ui-monospace,monospace;font-size:.88rem}.nav-btn.active{background:var(--panel-2);color:var(--red)}.count-badge{display:inline-grid;place-items:center;min-width:18px;height:18px;padding:0 4px;background:var(--red);color:#fff;border-radius:999px;font-size:.65rem;margin-left:3px}
     .toast{position:fixed;z-index:50;left:50%;bottom:90px;transform:translate(-50%,20px);width:min(calc(100% - 32px),460px);background:var(--ink);color:var(--bg);padding:12px 15px;border-radius:10px;text-align:center;font-weight:750;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translate(-50%,0)}
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
@@ -405,6 +405,7 @@
     <button class="nav-btn active" data-view="home" type="button"><span class="nav-mark">⌂</span><span>Home</span></button>
     <button class="nav-btn" data-view="weak" type="button"><span class="nav-mark">!</span><span>Weak <span class="count-badge" id="navWeak">0</span></span></button>
     <button class="nav-btn" data-view="stats" type="button"><span class="nav-mark">%</span><span>Results</span></button>
+    <a class="nav-btn" href="ifsta/" style="text-decoration:none"><span class="nav-mark">IF</span><span>IFSTA</span></a>
   </nav>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
