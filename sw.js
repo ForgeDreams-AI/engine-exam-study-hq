@@ -1,4 +1,4 @@
-const CACHE = 'engine-exam-study-hq-v7';
+const CACHE = 'engine-exam-study-hq-v8';
 const CORE = ['index.html', 'manifest.json', 'apple-touch-icon.png', 'icon-192.png', 'icon-512.png', 'icon-maskable-512.png'];
 
 self.addEventListener('install', (e) => {
