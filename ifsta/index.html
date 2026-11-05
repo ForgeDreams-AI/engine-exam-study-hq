@@ -59,6 +59,15 @@
   <section id="view-home">
     <h2>Pick a chapter</h2>
     <div class="grid" id="chapter-grid"></div>
+    <h2 style="margin-top:28px;">New study guide questions</h2>
+    <p class="note">Separate folder — the questions from the two study guides you sent, kept apart from the IFSTA chapters above.</p>
+    <div class="grid">
+      <button class="card mix" id="new-folder-card" type="button">
+        <div class="num">New folder</div>
+        <div class="title">New study guide questions</div>
+        <div class="count" id="new-folder-count"></div>
+      </button>
+    </div>
   </section>
 
   <!-- SETUP -->
@@ -105,6 +114,7 @@
 <footer>Study questions from the IFSTA Driver/Operator chapter sheets. Answers are study summaries, not an official IFSTA answer key — verify against the textbook and department policy.</footer>
 
 <script src="questions.js"></script>
+<script src="new-questions.js"></script>
 <script>
   var chapters = IFSTA_DATA.chapters;
   var totalQ = chapters.reduce(function (s, c) { return s + c.questions.length; }, 0);
@@ -140,6 +150,21 @@
 
   function esc(s) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+
+  // Separate folder: the new study-guide questions, kept apart from the IFSTA chapters.
+  document.getElementById('new-folder-count').textContent = NEW_QUESTIONS.length + ' questions';
+  document.getElementById('new-folder-card').onclick = function () { openNewSetup(); };
+
+  function openNewSetup() {
+    pool = NEW_QUESTIONS.map(function (q) { return { q: q.q, a: q.a, ch: { topic: q.topic } }; });
+    document.getElementById('setup-scope').textContent = 'New folder';
+    document.getElementById('setup-title').textContent = 'New study guide questions';
+    document.getElementById('setup-pool').textContent = pool.length + ' questions in this pool.';
+    lim150.classList.add('hidden');
+    document.getElementById('limrow').style.gridTemplateColumns = '1fr 1fr';
+    setLimit(25);
+    show(setup);
   }
 
   // Setup state
@@ -198,7 +223,7 @@
     var item = order[idx];
     document.getElementById('quiz-progress').textContent = 'Question ' + (idx + 1) + ' of ' + order.length;
     document.getElementById('quiz-bar').style.width = (idx / order.length * 100) + '%';
-    document.getElementById('quiz-meta').textContent = 'Chapter ' + item.ch.n + ' · ' + item.ch.title;
+    document.getElementById('quiz-meta').textContent = item.ch.topic ? item.ch.topic : ('Chapter ' + item.ch.n + ' · ' + item.ch.title);
     document.getElementById('quiz-q').textContent = item.q;
     document.getElementById('quiz-a').textContent = item.a;
     document.getElementById('quiz-answer-wrap').classList.add('hidden');
@@ -230,7 +255,7 @@
     missed.forEach(function (m) {
       var d = document.createElement('div');
       d.className = 'miss';
-      d.innerHTML = '<div class="mc">Chapter ' + m.ch.n + ' · ' + esc(m.ch.title) + '</div>' +
+      d.innerHTML = '<div class="mc">' + (m.ch.topic ? esc(m.ch.topic) : ('Chapter ' + m.ch.n + ' · ' + esc(m.ch.title))) + '</div>' +
         '<div class="mq">' + esc(m.q) + '</div><div class="ma">' + esc(m.a) + '</div>';
       wrap.appendChild(d);
     });
