@@ -49,7 +49,7 @@
 </style>
 </head>
 <body>
-<a href="../" style="display:block;background:#1a1a1a;color:#fff;font-weight:700;font-size:15px;text-decoration:none;padding:12px 16px;">← Engineer Exam Study HQ</a>
+<div style="display:flex;justify-content:space-between;gap:12px;background:#1a1a1a;padding:12px 16px;"><a href="./" style="color:#fff;font-weight:700;font-size:15px;text-decoration:none;">← IFSTA home</a><a href="../" style="color:#fff;font-weight:700;font-size:15px;text-decoration:none;">Engineer Exam Study HQ →</a></div>
 <header>
   <h1>IFSTA Engineer — Chapter Questions</h1>
   <p>Driver/Operator study questions. Pick a chapter or mix them all, then test yourself.</p>
@@ -88,6 +88,7 @@
       <button class="btn btn-amber" id="btn-missed" type="button">Missed it ✗</button>
     </div>
     <button class="btn btn-dark" id="btn-show" type="button">Show answer</button>
+    <button class="btn btn-light" id="btn-quiz-back" type="button">Back to chapters</button>
   </section>
 
   <!-- RESULTS -->
@@ -210,6 +211,7 @@
   }
   document.getElementById('btn-got').onclick = function () { mark(true); };
   document.getElementById('btn-missed').onclick = function () { mark(false); };
+  document.getElementById('btn-quiz-back').onclick = function () { show(home); };
 
   function showResults() {
     document.getElementById('quiz-bar').style.width = '100%';
