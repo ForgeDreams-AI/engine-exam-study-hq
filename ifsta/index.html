@@ -79,7 +79,7 @@
     <div class="limrow" id="limrow">
       <button class="lim sel" id="lim25" type="button">25</button>
       <button class="lim" id="lim50" type="button">50</button>
-      <button class="lim hidden" id="lim75" type="button">75</button>
+      <button class="lim hidden" id="lim65" type="button">65</button>
       <button class="lim" id="lim150" type="button">150</button>
     </div>
     <p class="note" id="setup-cap"></p>
@@ -163,7 +163,7 @@
     document.getElementById('setup-title').textContent = 'New study guide questions';
     document.getElementById('setup-pool').textContent = pool.length + ' questions in this pool.';
     lim150.classList.add('hidden');
-    lim75.classList.remove('hidden');
+    lim65.classList.remove('hidden');
     document.getElementById('limrow').style.gridTemplateColumns = '1fr 1fr 1fr';
     setLimit(25);
     show(setup);
@@ -171,7 +171,7 @@
 
   // Setup state
   var scopeCh = null, limit = 25, pool = [];
-  var lim25 = document.getElementById('lim25'), lim50 = document.getElementById('lim50'), lim75 = document.getElementById('lim75'), lim150 = document.getElementById('lim150');
+  var lim25 = document.getElementById('lim25'), lim50 = document.getElementById('lim50'), lim65 = document.getElementById('lim65'), lim150 = document.getElementById('lim150');
 
   function openSetup(ch) {
     scopeCh = ch;
@@ -184,7 +184,7 @@
     document.getElementById('setup-pool').textContent = pool.length + ' questions in this pool.';
     // 150 is only offered when combining chapters (Mix) — single chapters stay at 25 / 50.
     lim150.classList.toggle('hidden', !!ch);
-    lim75.classList.add('hidden');
+    lim65.classList.add('hidden');
     document.getElementById('limrow').style.gridTemplateColumns = ch ? '1fr 1fr' : '1fr 1fr 1fr';
     setLimit(25);
     show(setup);
@@ -194,7 +194,7 @@
     limit = n;
     lim25.classList.toggle('sel', n === 25);
     lim50.classList.toggle('sel', n === 50);
-    lim75.classList.toggle('sel', n === 75);
+    lim65.classList.toggle('sel', n === 65);
     lim150.classList.toggle('sel', n === 150);
     var eff = Math.min(n, pool.length);
     document.getElementById('setup-cap').textContent =
@@ -203,7 +203,7 @@
   }
   lim25.onclick = function () { setLimit(25); };
   lim50.onclick = function () { setLimit(50); };
-  lim75.onclick = function () { setLimit(75); };
+  lim65.onclick = function () { setLimit(65); };
   lim150.onclick = function () { setLimit(150); };
   document.getElementById('setup-back').onclick = function () { show(home); };
 
