@@ -52,6 +52,12 @@
   .missed-item .mq { font-size: 15px; font-weight: 700; line-height: 1.4; }
   .missed-item .ma { font-size: 14px; line-height: 1.5; margin-top: 8px; color: #c8e6c9; }
   .missed-item .mw { font-size: 14px; line-height: 1.5; margin-top: 6px; color: #bbb; }
+  .qr-group { font-size: 15px; margin: 18px 0 8px; color: #ff6b6b; letter-spacing: .04em; text-transform: uppercase; }
+  details.qr { background: #232323; border: 2px solid #3a3a3a; border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; }
+  details.qr summary { font-size: 16px; font-weight: 700; cursor: pointer; line-height: 1.35; }
+  details.qr .qr-what { font-size: 14px; color: #bbb; line-height: 1.5; margin: 8px 0; }
+  details.qr .qr-points { margin: 0 0 0 18px; }
+  details.qr .qr-points li { font-size: 14px; line-height: 1.55; margin-bottom: 5px; }
   footer { text-align: center; color: #888; font-size: 12px; line-height: 1.5; padding: 0 16px 28px; max-width: 720px; margin: 0 auto; }
   .backlink { display: inline-block; color: #ff9a9a; font-size: 14px; font-weight: 700; text-decoration: none; margin-bottom: 4px; }
 </style>
@@ -66,7 +72,7 @@
   <section id="view-home">
     <a class="backlink" href="../">&larr; Back to Engine Exam HQ</a>
     <h2>Sit the full test, or drill one topic</h2>
-    <p class="note">50 questions built from the PFD MPs, apparatus docs, and Ladder Manual chapters in the 2026 Engineer Bibliography. Every question cites its source. The IFSTA &ldquo;Pumping and Aerial Apparatus Driver/Operator Handbook&rdquo; (4th Ed.) is <b>not</b> covered here — it is a $75 book with no copy available. Two bibliography sources are also not covered: M.P. 201.01B Mayday Readiness and Response and the PFD Hydraulics PowerPoint — their links are broken on FirePoint.</p>
+    <p class="note">100 questions built from the PFD MPs, apparatus docs, and Ladder Manual chapters in the 2026 Engineer Bibliography. Every question cites its source. The IFSTA &ldquo;Pumping and Aerial Apparatus Driver/Operator Handbook&rdquo; (4th Ed.) is <b>not</b> covered here — it is a $75 book with no copy available. Three bibliography sources are also not covered: M.P. 201.01B Mayday Readiness and Response and the PFD Hydraulics PowerPoint — their links are broken on FirePoint — and M.P. 203.01 EMS Responsibilities, which would not open (Access Denied).</p>
     <div class="grid" style="margin-top:14px;">
       <button class="card mock" id="seed-card" type="button">
         <div class="num">ENG PRACTICE TEST 1 &middot; THE REAL QUESTIONS</div>
@@ -75,16 +81,19 @@
       </button>
       <button class="card mock" id="full-card" type="button">
         <div class="num">FULL TEST &middot; LIKE THE REAL THING</div>
-        <div class="title">50-Question Practice Test</div>
-        <div class="count">50 questions, mixed across all topics, shuffled</div>
+        <div class="title">100-Question Practice Test</div>
+        <div class="count">100 questions, mixed across all topics, shuffled</div>
       </button>
       <button class="card mix" id="mix-card" type="button">
         <div class="num">MIX</div>
         <div class="title">All topics mixed</div>
-        <div class="count">50 questions across 6 topics</div>
+        <div class="count">100 questions across 10 topics</div>
       </button>
       <div id="topic-grid" style="display:contents;"></div>
     </div>
+    <h2 style="margin-top:28px;">Quick reads — every source, the short version</h2>
+    <p class="note">One short read per bibliography source — what it is, and the must-know facts and numbers. Tap one to open it. All 60+ sources covered, in the bibliography&rsquo;s own order.</p>
+    <div id="qr-groups" style="margin-top:10px;"></div>
   </section>
 
   <!-- SETUP -->
@@ -123,9 +132,10 @@
     <button class="btn btn-light" id="btn-home" type="button">Back to home</button>
   </section>
 </main>
-<footer>Questions written from the 2026 Engineer Bibliography: M.P. 201.01 Command Procedures, 201.03 Accountability, 201.04 2 In / 2 Out, 202.02 Fireground Factors, 202.02A Tactical Objectives, 202.02B Fireground Strategy, 202.02C Rescue, 202.05 Fireground Safety, 202.06 Roof Sector, 202.12B Overhaul, 202.12E Water Supply and Fire Stream Management, 205.07 Apparatus Placement, 205.08 Driver Safety, PFD Pumping Operations, PFD Pre-trip Inspection, PFD Ladder Manual Ch. 2 (Building Construction), E-One Mid-Mount Ladder Manual. Study aid only — not an official department test. When in doubt, the MP itself is the answer.</footer>
+<footer>Questions written from the 2026 Engineer Bibliography: all 60+ sources — the Volume 1 admin MPs, all Volume 2 procedures, apparatus and hydraulics docs, and the Ladder Manual chapters. Not covered: IFSTA handbook ($75 book, no copy), M.P. 201.01B Mayday and the Hydraulics PowerPoint (links broken on FirePoint), M.P. 203.01 EMS Responsibilities (Access Denied). Study aid only — not an official department test. When in doubt, the MP itself is the answer.</footer>
 
 <script src="questions.js"></script>
+<script src="quick-reads.js"></script>
 <script>
   var QS = BIB_QUESTIONS;
   var SEEDS = SEED_QUESTIONS;
@@ -135,7 +145,11 @@
     { name: "Fireground Safety & Roof", blurb: "Fireground safety, collapse factors, roof sector" },
     { name: "Overhaul & Water Supply", blurb: "Overhaul, water supply and fire stream management" },
     { name: "Apparatus & Driver", blurb: "Apparatus placement, driver safety, pre-trip, pumping" },
-    { name: "Building Construction & Aerial", blurb: "Building construction, E-One mid-mount ladder" }
+    { name: "Building Construction & Aerial", blurb: "Building construction, E-One mid-mount ladder" },
+    { name: "Admin, Rules & Conduct", blurb: "Rules of conduct, discipline, sick leave, shift trades, hearing conservation" },
+    { name: "Communications, Staging & Response", blurb: "Communications, staging, SCBA, rehab, salvage, dispatch" },
+    { name: "Special Operations", blurb: "High-rise, HazMat, trench, brush, car fires, freeway, light rail" },
+    { name: "Ladder Operations & Aerial", blurb: "Size-up, roof types, extrication, tree rescue, aerial platforms" }
   ];
   function countFor(topic) { return QS.filter(function (q) { return q.topic === topic; }).length; }
   function mpLabel(mp) { return /^[0-9]/.test(mp) ? "M.P. " + mp : mp; }
@@ -165,11 +179,43 @@
     openSetup({ type: 'seed', title: 'Eng Practice Test 1 — Questions 16\u201321', limits: [6], keepOrder: true });
   };
   document.getElementById('mix-card').onclick = function () {
-    openSetup({ type: 'mix', title: 'All topics mixed', limits: [25, 50] });
+    openSetup({ type: 'mix', title: 'All topics mixed', limits: [25, 50, 100] });
   };
   document.getElementById('full-card').onclick = function () {
-    openSetup({ type: 'full', title: '50-Question Practice Test', limits: [50] });
+    openSetup({ type: 'full', title: '100-Question Practice Test', limits: [100] });
   };
+
+  // Quick reads: grouped by the bibliography's own groups, in order.
+  var QR_GROUPS = ["ARs/Volume 1", "Volume 2", "Apparatus/Hydraulics", "Ladder Manual"];
+  var qrWrap = document.getElementById('qr-groups');
+  QR_GROUPS.forEach(function (g) {
+    var items = QUICK_READS.filter(function (r) { return r.group === g; });
+    if (!items.length) return;
+    var h = document.createElement('h3');
+    h.className = 'qr-group';
+    h.textContent = g + ' (' + items.length + ')';
+    qrWrap.appendChild(h);
+    items.forEach(function (r) {
+      var d = document.createElement('details');
+      d.className = 'qr';
+      var s = document.createElement('summary');
+      s.textContent = r.title;
+      d.appendChild(s);
+      var w = document.createElement('p');
+      w.className = 'qr-what';
+      w.textContent = r.what;
+      d.appendChild(w);
+      var ul = document.createElement('ul');
+      ul.className = 'qr-points';
+      r.points.forEach(function (p) {
+        var li = document.createElement('li');
+        li.textContent = p;
+        ul.appendChild(li);
+      });
+      d.appendChild(ul);
+      qrWrap.appendChild(d);
+    });
+  });
 
   // Setup state
   var scope = null, limit = 25, pool = [];
