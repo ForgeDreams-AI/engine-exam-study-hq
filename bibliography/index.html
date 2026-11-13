@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Engineer Bibliography 2026 — Practice Test</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #141414; color: #f2f2f2; min-height: 100vh; }
+  header { background: #8b0000; padding: 20px 16px 16px; }
+  header h1 { font-size: 22px; line-height: 1.25; }
+  header p { font-size: 14px; opacity: .9; margin-top: 6px; line-height: 1.45; }
+  main { max-width: 720px; margin: 0 auto; padding: 16px 16px 48px; }
+  .hidden { display: none !important; }
+  h2 { font-size: 18px; margin: 20px 0 10px; }
+  .note { font-size: 14px; color: #bbb; line-height: 1.5; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+  .card { display: block; width: 100%; text-align: left; background: #232323; border: 2px solid #3a3a3a; border-radius: 12px; padding: 16px; color: #f2f2f2; cursor: pointer; font-family: inherit; }
+  .card:active { border-color: #c00; }
+  .card .num { font-size: 13px; font-weight: 800; color: #ff6b6b; letter-spacing: .04em; }
+  .card .title { font-size: 17px; font-weight: 700; margin: 4px 0; line-height: 1.3; }
+  .card .count { font-size: 13px; color: #bbb; }
+  .card.mock { grid-column: 1 / -1; background: #8b0000; border-color: #c00; }
+  .card.mock .num { color: #ffd2d2; }
+  .card.mock .title { font-size: 19px; }
+  .card.mock .count { color: #ffd2d2; }
+  .card.mix { grid-column: 1 / -1; }
+  .scope { font-size: 13px; font-weight: 800; color: #ff6b6b; letter-spacing: .05em; text-transform: uppercase; }
+  .limrow { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 10px; }
+  .lim { background: #232323; border: 2px solid #3a3a3a; color: #f2f2f2; border-radius: 10px; padding: 14px 0; font-size: 18px; font-weight: 700; cursor: pointer; font-family: inherit; }
+  .lim.sel { background: #8b0000; border-color: #c00; }
+  .btn { display: block; width: 100%; border: none; border-radius: 10px; padding: 16px; font-size: 17px; font-weight: 700; cursor: pointer; font-family: inherit; margin-top: 14px; }
+  .btn-red { background: #c00; color: #fff; }
+  .btn-light { background: #333; color: #f2f2f2; }
+  .btn-green { background: #1e7d32; color: #fff; }
+  .progress { font-size: 14px; color: #bbb; margin-bottom: 6px; }
+  .bar { height: 8px; background: #333; border-radius: 4px; overflow: hidden; margin-bottom: 16px; }
+  .bar > div { height: 100%; background: #c00; width: 0%; }
+  .qmeta { font-size: 13px; font-weight: 800; color: #ff6b6b; letter-spacing: .04em; margin-bottom: 8px; }
+  .qtext { font-size: 19px; line-height: 1.45; margin-bottom: 16px; }
+  .opt { display: block; width: 100%; text-align: left; background: #232323; border: 2px solid #3a3a3a; border-radius: 10px; padding: 15px 14px; font-size: 16px; line-height: 1.4; color: #f2f2f2; cursor: pointer; font-family: inherit; margin-bottom: 10px; }
+  .opt.correct { background: #1e7d32; border-color: #4caf50; }
+  .opt.wrong { background: #7d1e1e; border-color: #e53935; }
+  .opt:disabled { cursor: default; opacity: 1; }
+  .whybox { background: #232323; border-left: 4px solid #c00; border-radius: 8px; padding: 14px; margin-top: 6px; }
+  .whybox p { font-size: 15px; line-height: 1.5; }
+  .whybox.flagged { border-left-color: #ffeb3b; background: #2e2a16; }
+  .whybox .cite { font-size: 13px; color: #ff9a9a; margin-top: 8px; font-weight: 700; }
+  .score { font-size: 26px; font-weight: 800; margin: 12px 0 4px; }
+  .missed-item { background: #232323; border-radius: 10px; padding: 14px; margin-top: 12px; }
+  .missed-item .mq { font-size: 15px; font-weight: 700; line-height: 1.4; }
+  .missed-item .ma { font-size: 14px; line-height: 1.5; margin-top: 8px; color: #c8e6c9; }
+  .missed-item .mw { font-size: 14px; line-height: 1.5; margin-top: 6px; color: #bbb; }
+  footer { text-align: center; color: #888; font-size: 12px; line-height: 1.5; padding: 0 16px 28px; max-width: 720px; margin: 0 auto; }
+  .backlink { display: inline-block; color: #ff9a9a; font-size: 14px; font-weight: 700; text-decoration: none; margin-bottom: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Engineer Bibliography 2026 — Practice Test</h1>
+  <p>Phoenix Fire Department &middot; Engineer Bibliography 2026<br>Multiple choice, like the real practice test — numbered questions, fill-in-the-blank stems, a/b/c/d answers.</p>
+</header>
+<main>
+  <!-- HOME -->
+  <section id="view-home">
+    <a class="backlink" href="../">&larr; Back to Engine Exam HQ</a>
+    <h2>Sit the full test, or drill one topic</h2>
+    <p class="note">50 questions built from the PFD MPs, apparatus docs, and Ladder Manual chapters in the 2026 Engineer Bibliography. Every question cites its source. The IFSTA &ldquo;Pumping and Aerial Apparatus Driver/Operator Handbook&rdquo; (4th Ed.) is <b>not</b> covered here — it is a $75 book with no copy available. Two bibliography sources are also not covered: M.P. 201.01B Mayday Readiness and Response and the PFD Hydraulics PowerPoint — their links are broken on FirePoint.</p>
+    <div class="grid" style="margin-top:14px;">
+      <button class="card mock" id="seed-card" type="button">
+        <div class="num">ENG PRACTICE TEST 1 &middot; THE REAL QUESTIONS</div>
+        <div class="title">Practice Test 1 — Questions 16&ndash;21</div>
+        <div class="count">6 questions, verbatim from the practice test, answers as circled — in original order</div>
+      </button>
+      <button class="card mock" id="full-card" type="button">
+        <div class="num">FULL TEST &middot; LIKE THE REAL THING</div>
+        <div class="title">50-Question Practice Test</div>
+        <div class="count">50 questions, mixed across all topics, shuffled</div>
+      </button>
+      <button class="card mix" id="mix-card" type="button">
+        <div class="num">MIX</div>
+        <div class="title">All topics mixed</div>
+        <div class="count">50 questions across 6 topics</div>
+      </button>
+      <div id="topic-grid" style="display:contents;"></div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section id="view-setup" class="hidden">
+    <p class="scope" id="setup-scope"></p>
+    <h2 id="setup-title"></h2>
+    <p class="note" id="setup-pool"></p>
+    <p style="font-weight:700; margin:16px 0 0;">How many questions?</p>
+    <div class="limrow" id="limrow"></div>
+    <p class="note" id="setup-cap" style="margin-top:10px;"></p>
+    <button class="btn btn-red" id="start-btn" type="button">Start quiz</button>
+    <button class="btn btn-light" id="setup-back" type="button">Back</button>
+  </section>
+
+  <!-- QUIZ -->
+  <section id="view-quiz" class="hidden">
+    <p class="progress" id="quiz-progress"></p>
+    <div class="bar"><div id="quiz-bar"></div></div>
+    <p class="qmeta" id="quiz-meta"></p>
+    <p class="qtext" id="quiz-q"></p>
+    <div id="quiz-opts"></div>
+    <div id="quiz-why" class="whybox hidden">
+      <p id="quiz-why-text"></p>
+      <p class="cite" id="quiz-cite"></p>
+      <button class="btn btn-red" id="btn-next" type="button">Next</button>
+    </div>
+  </section>
+
+  <!-- RESULTS -->
+  <section id="view-results" class="hidden">
+    <h2>Done!</h2>
+    <p class="score" id="res-score"></p>
+    <p class="note" id="res-sub"></p>
+    <div id="res-missed"></div>
+    <button class="btn btn-red" id="btn-restart" type="button">Restart (same quiz, reshuffled)</button>
+    <button class="btn btn-light" id="btn-home" type="button">Back to home</button>
+  </section>
+</main>
+<footer>Questions written from the 2026 Engineer Bibliography: M.P. 201.01 Command Procedures, 201.03 Accountability, 201.04 2 In / 2 Out, 202.02 Fireground Factors, 202.02A Tactical Objectives, 202.02B Fireground Strategy, 202.02C Rescue, 202.05 Fireground Safety, 202.06 Roof Sector, 202.12B Overhaul, 202.12E Water Supply and Fire Stream Management, 205.07 Apparatus Placement, 205.08 Driver Safety, PFD Pumping Operations, PFD Pre-trip Inspection, PFD Ladder Manual Ch. 2 (Building Construction), E-One Mid-Mount Ladder Manual. Study aid only — not an official department test. When in doubt, the MP itself is the answer.</footer>
+
+<script src="questions.js"></script>
+<script>
+  var QS = BIB_QUESTIONS;
+  var SEEDS = SEED_QUESTIONS;
+  var TOPICS = [
+    { name: "Command & Accountability", blurb: "Command procedures, accountability, 2 In / 2 Out" },
+    { name: "Fireground Strategy & Tactics", blurb: "Fireground factors, objectives, strategy, rescue" },
+    { name: "Fireground Safety & Roof", blurb: "Fireground safety, collapse factors, roof sector" },
+    { name: "Overhaul & Water Supply", blurb: "Overhaul, water supply and fire stream management" },
+    { name: "Apparatus & Driver", blurb: "Apparatus placement, driver safety, pre-trip, pumping" },
+    { name: "Building Construction & Aerial", blurb: "Building construction, E-One mid-mount ladder" }
+  ];
+  function countFor(topic) { return QS.filter(function (q) { return q.topic === topic; }).length; }
+  function mpLabel(mp) { return /^[0-9]/.test(mp) ? "M.P. " + mp : mp; }
+
+  var home = document.getElementById('view-home');
+  var setup = document.getElementById('view-setup');
+  var quiz = document.getElementById('view-quiz');
+  var results = document.getElementById('view-results');
+  function show(el) {
+    [home, setup, quiz, results].forEach(function (v) { v.classList.add('hidden'); });
+    el.classList.remove('hidden');
+    window.scrollTo(0, 0);
+  }
+
+  // Home grid: topic cards.
+  var topicGrid = document.getElementById('topic-grid');
+  TOPICS.forEach(function (t) {
+    var n = countFor(t.name);
+    var b = document.createElement('button');
+    b.className = 'card'; b.type = 'button';
+    b.innerHTML = '<div class="num">' + t.name.toUpperCase() + '</div><div class="title">' + t.name + '</div>' +
+      '<div class="count">' + n + ' questions &middot; ' + t.blurb + '</div>';
+    b.onclick = function () { openSetup({ type: 'topic', topic: t.name, title: t.name, limits: [n] }); };
+    topicGrid.appendChild(b);
+  });
+  document.getElementById('seed-card').onclick = function () {
+    openSetup({ type: 'seed', title: 'Eng Practice Test 1 — Questions 16\u201321', limits: [6], keepOrder: true });
+  };
+  document.getElementById('mix-card').onclick = function () {
+    openSetup({ type: 'mix', title: 'All topics mixed', limits: [25, 50] });
+  };
+  document.getElementById('full-card').onclick = function () {
+    openSetup({ type: 'full', title: '50-Question Practice Test', limits: [50] });
+  };
+
+  // Setup state
+  var scope = null, limit = 25, pool = [];
+  function openSetup(s) {
+    scope = s;
+    pool = s.type === 'topic' ? QS.filter(function (q) { return q.topic === s.topic; })
+         : s.type === 'seed' ? SEEDS.slice()
+         : QS.concat(SEEDS).slice();
+    document.getElementById('setup-scope').textContent = s.type === 'full' ? 'Full test' : (s.type === 'mix' ? 'Mix' : (s.type === 'seed' ? 'Practice Test 1' : s.topic));
+    document.getElementById('setup-title').textContent = s.title;
+    document.getElementById('setup-pool').textContent = pool.length + ' questions in this pool.' + (s.type === 'seed' ? ' Questions 16\u201321, in the order they appear on the practice test.' : '');
+    var row = document.getElementById('limrow');
+    row.innerHTML = '';
+    row.style.gridTemplateColumns = 'repeat(' + s.limits.length + ', 1fr)';
+    s.limits.forEach(function (n) {
+      var b = document.createElement('button');
+      b.className = 'lim'; b.type = 'button'; b.textContent = n;
+      b.onclick = function () { setLimit(n); };
+      b.dataset.n = n;
+      row.appendChild(b);
+    });
+    setLimit(s.limits[s.limits.length - 1]);
+    show(setup);
+  }
+  function setLimit(n) {
+    limit = n;
+    Array.prototype.forEach.call(document.querySelectorAll('#limrow .lim'), function (b) {
+      b.classList.toggle('sel', parseInt(b.dataset.n, 10) === n);
+    });
+    var eff = Math.min(n, pool.length);
+    document.getElementById('setup-cap').textContent =
+      pool.length < n ? (pool.length + ' questions available — you\u2019ll get all ' + pool.length + '.')
+                      : ('You\u2019ll get ' + eff + ' questions, shuffled.');
+  }
+  document.getElementById('setup-back').onclick = function () { show(home); };
+
+  // Quiz state
+  var order = [], idx = 0, correct = 0, missed = [];
+  function shuffle(arr) {
+    for (var i = arr.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = arr[i]; arr[i] = arr[j]; arr[j] = t;
+    }
+    return arr;
+  }
+  document.getElementById('start-btn').onclick = function () {
+    var base = scope.keepOrder ? pool.slice() : shuffle(pool.slice());
+    order = base.slice(0, Math.min(limit, pool.length)).map(function (q) {
+      // Shuffle the options for this run; track the new correct index.
+      var idxs = shuffle(q.opts.map(function (_, i) { return i; }));
+      return {
+        q: q.q, mp: q.mp, topic: q.topic, why: q.why, cite: q.cite, n: q.n, flag: !!q.flag,
+        opts: idxs.map(function (i) { return q.opts[i]; }),
+        answer: idxs.indexOf(q.answer)
+      };
+    });
+    idx = 0; correct = 0; missed = [];
+    renderQ();
+    show(quiz);
+  };
+
+  function renderQ() {
+    var item = order[idx];
+    document.getElementById('quiz-progress').textContent =
+      (scope.type === 'full' ? 'Practice Test — ' : scope.type === 'seed' ? 'Practice Test 1 — ' : '') + 'Question ' + (idx + 1) + ' of ' + order.length;
+    document.getElementById('quiz-bar').style.width = (idx / order.length * 100) + '%';
+    document.getElementById('quiz-meta').textContent = (item.n ? 'Practice Test 1 · Q' + item.n + ' · ' : '') + mpLabel(item.mp) + ' · ' + item.topic;
+    document.getElementById('quiz-q').textContent = item.q;
+    var wrap = document.getElementById('quiz-opts');
+    wrap.innerHTML = '';
+    item.opts.forEach(function (opt, i) {
+      var b = document.createElement('button');
+      b.className = 'opt'; b.type = 'button';
+      b.textContent = String.fromCharCode(97 + i) + ') ' + opt;
+      b.onclick = function () { answerQ(i, b); };
+      wrap.appendChild(b);
+    });
+    document.getElementById('quiz-why').classList.add('hidden');
+    document.getElementById('quiz-why').classList.remove('flagged');
+  }
+
+  function answerQ(i, btn) {
+    var item = order[idx];
+    var btns = document.querySelectorAll('#quiz-opts .opt');
+    btns.forEach(function (b) { b.disabled = true; });
+    if (i === item.answer) {
+      correct++;
+      btn.classList.add('correct');
+    } else {
+      btn.classList.add('wrong');
+      btns[item.answer].classList.add('correct');
+      missed.push(item);
+    }
+    document.getElementById('quiz-why-text').textContent = item.why;
+    document.getElementById('quiz-cite').textContent = item.cite;
+    if (item.flag) { document.getElementById('quiz-why').classList.add('flagged'); }
+    document.getElementById('quiz-why').classList.remove('hidden');
+    document.getElementById('btn-next').textContent = idx + 1 >= order.length ? 'See results' : 'Next';
+    document.getElementById('quiz-why').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+  document.getElementById('btn-next').onclick = function () {
+    idx++;
+    if (idx >= order.length) { showResults(); } else { renderQ(); }
+  };
+
+  function showResults() {
+    document.getElementById('quiz-bar').style.width = '100%';
+    document.getElementById('res-score').textContent = correct + ' of ' + order.length + ' correct';
+    var pct = Math.round(correct / order.length * 100);
+    document.getElementById('res-sub').textContent = missed.length === 0
+      ? 'Clean run — nice work.'
+      : pct + '% — review the ones you missed below.';
+    var wrap = document.getElementById('res-missed');
+    wrap.innerHTML = '';
+    missed.forEach(function (item) {
+      var d = document.createElement('div');
+      d.className = 'missed-item';
+      var q = document.createElement('p'); q.className = 'mq'; q.textContent = item.q;
+      var a = document.createElement('p'); a.className = 'ma'; a.textContent = 'Answer: ' + item.opts[item.answer];
+      var w = document.createElement('p'); w.className = 'mw'; w.textContent = item.why + ' (' + item.cite + ')';
+      d.appendChild(q); d.appendChild(a); d.appendChild(w);
+      wrap.appendChild(d);
+    });
+    show(results);
+  }
+  document.getElementById('btn-restart').onclick = function () {
+    document.getElementById('start-btn').click();
+  };
+  document.getElementById('btn-home').onclick = function () { show(home); };
+</script>
+</body>
+</html>
