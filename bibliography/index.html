@@ -72,7 +72,7 @@
   <section id="view-home">
     <a class="backlink" href="../">&larr; Back to Engine Exam HQ</a>
     <h2>Sit the full test, or drill one topic</h2>
-    <p class="note">100 questions built from the PFD MPs, apparatus docs, and Ladder Manual chapters in the 2026 Engineer Bibliography. Every question cites its source. The IFSTA &ldquo;Pumping and Aerial Apparatus Driver/Operator Handbook&rdquo; (4th Ed.) is <b>not</b> covered here — it is a $75 book with no copy available. Three bibliography sources are also not covered: M.P. 201.01B Mayday Readiness and Response and the PFD Hydraulics PowerPoint — their links are broken on FirePoint — and M.P. 203.01 EMS Responsibilities, which would not open (Access Denied).</p>
+    <p class="note">112 questions built from the PFD MPs, apparatus docs, and Ladder Manual chapters in the 2026 Engineer Bibliography. Every question cites its source. The IFSTA &ldquo;Pumping and Aerial Apparatus Driver/Operator Handbook&rdquo; (4th Ed.) is <b>not</b> covered here — it is a $75 book with no copy available. Three bibliography sources are also not covered: M.P. 201.01B Mayday Readiness and Response and the PFD Hydraulics PowerPoint — their links are broken on FirePoint — and M.P. 203.01 EMS Responsibilities, which would not open (Access Denied).</p>
     <div class="grid" style="margin-top:14px;">
       <button class="card mock" id="seed-card" type="button">
         <div class="num">ENG PRACTICE TEST 1 &middot; THE REAL QUESTIONS</div>
@@ -81,13 +81,13 @@
       </button>
       <button class="card mock" id="full-card" type="button">
         <div class="num">FULL TEST &middot; LIKE THE REAL THING</div>
-        <div class="title">100-Question Practice Test</div>
-        <div class="count">100 questions, mixed across all topics, shuffled</div>
+        <div class="title">112-Question Practice Test</div>
+        <div class="count">112 questions, mixed across all topics, shuffled</div>
       </button>
       <button class="card mix" id="mix-card" type="button">
         <div class="num">MIX</div>
         <div class="title">All topics mixed</div>
-        <div class="count">100 questions across 10 topics</div>
+        <div class="count">112 questions across 10 topics</div>
       </button>
       <div id="topic-grid" style="display:contents;"></div>
     </div>
@@ -179,10 +179,10 @@
     openSetup({ type: 'seed', title: 'Eng Practice Test 1 — Questions 16\u201321', limits: [6], keepOrder: true });
   };
   document.getElementById('mix-card').onclick = function () {
-    openSetup({ type: 'mix', title: 'All topics mixed', limits: [25, 50, 100] });
+    openSetup({ type: 'mix', title: 'All topics mixed', limits: [25, 50, 112] });
   };
   document.getElementById('full-card').onclick = function () {
-    openSetup({ type: 'full', title: '100-Question Practice Test', limits: [100] });
+    openSetup({ type: 'full', title: '112-Question Practice Test', limits: [112] });
   };
 
   // Quick reads: grouped by the bibliography's own groups, in order.
